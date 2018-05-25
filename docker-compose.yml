@@ -1,0 +1,17 @@
+version: "2"
+services:
+  danetheory-api:
+    build: .
+    environment:
+      - MONGO_URI=mongodb://127.0.0.1:27017/danetheory-api
+    volumes:
+      - .:/app
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"

@@ -1,0 +1,4 @@
+version: "2"
+services:
+  danetheory-api:
+    command: yarn test
